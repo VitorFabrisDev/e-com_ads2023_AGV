@@ -165,7 +165,7 @@
      background: #000000;
      padding: 10px 0px;
 }
- .custom-select-box{
+.custom-select-box{
      float: left;
      width: 95px;
      margin-right: 10px;
@@ -174,18 +174,35 @@
      background: none;
      border: none;
 }
- .custom-select-box .bootstrap-select .btn-light{
-     padding: 4px;
-     font-size: 14px;
-     background: #b0b435;
-     color: #fff;
-     border: none;
-     border-radius: 0px;
-}
- .custom-select-box .bootstrap-select .btn-light span{
-     padding: 2px;
-     line-height: 15px;
-}
+.custom-select-box .ng-select .ng-value-container {
+    padding: 2px;
+    margin-right: 5px;
+    line-height: 15px;
+    font-size: 14px;
+    background: #b0b435;
+    color: #fff;
+	border: none;
+    border-radius: 0px;
+  }
+  
+  .custom-select-box .ng-select .ng-option {
+    background: white;
+    color: #000000;
+	padding: 2px;
+    line-height: 15px;
+  }
+  .custom-select-box .ng-select .ng-value-container::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 3px 3px 0 3px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    background: #b0b435;
+    color: #fff;
+  }
  .dropdown-toggle::after{
      margin-left: -24px;
 }
@@ -266,47 +283,50 @@
  .our-link ul li:last-child{
      border: none;
 }
-.login-box{
-    float: right;
+.login-box {
+    float: left;
     width: 120px;
     margin-left: 20px;
-}
-
-.login-box .form-control{
-     background: none;
-     border: none;
-}
- .login-box .bootstrap-select .btn-light{
-     padding: 4px;
-     font-size: 14px;
-     background: #b0b435;
-     color: #fff;
-     border: none;
-     border-radius: 0px;
-}
- .login-box .bootstrap-select .btn-light span{
-     padding: 2px;
-     line-height: 15px;
-}
-.login-box .dropdown-toggle::after {
-     display: inline-block;
-     width: 0;
-     height: 0;
-     margin-left: .255em;
-     vertical-align: .255em;
-     content: "";
-     border-top: .3em solid;
-     border-right: .3em solid transparent;
-     border-bottom: 0;
-     border-left: .3em solid transparent;
-     position: absolute;
-     top: 13px;
-     right: 10px;
-}
-
-.login-box .dropdown-item{
-	padding: 5px 10px;
-}
+  }
+  
+  .login-box .form-control {
+    background: none;
+    border: none;
+  }
+  
+  .login-box .bootstrap-select .btn-light {
+    padding: 4px;
+    font-size: 14px;
+    background: #b0b435;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+  }
+  
+  .login-box .bootstrap-select .btn-light span {
+    padding: 2px;
+    line-height: 15px;
+  }
+  
+  .login-box .dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+  }
+  
+  .login-box .dropdown-item {
+    padding: 5px 10px;
+  }
 
 .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner span.text{
 	font-size: 13px;
@@ -2189,7 +2209,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #1111111;
+     color: #111111;
      font-weight: 600;
 }
  .new-account-login h5 a:hover{
