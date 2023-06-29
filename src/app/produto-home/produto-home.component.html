@@ -1,0 +1,31 @@
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row product__filter">
+                    <div *ngFor="let produto of produtos" class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        <div class="product__item">
+                            <div class="product__item">
+                                <div class="product__item__pic" [ngStyle]="{'background-image': 'url('+ produto.imagem +')'}">
+                                    <ul class="product__hover">
+                                        <li><a ><img #icone src="assets/Template/img/icon/search.png" alt="" (click)="redirecionarParaDetalheProduto(produto.id)"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6>{{produto.nome}}</h6>
+                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <div class="rating">
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <h5>{{ produto.preco.toFixed(2) }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Product Section End -->

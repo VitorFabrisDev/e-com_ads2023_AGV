@@ -1,0 +1,34 @@
+[
+    {
+        "id":1,
+        "nome":"Nike latest sneaker",
+        "preco":200.65,
+        "imagem":"assets/template/img/product/new-product/n2.jpg",
+        "categoria":{
+            "id":1,
+            "descricao":"Salgado"
+        },
+        "imagens":[
+            "assets/template/img/product/single-product/s-product-1.jpg",
+        ]
+    },
+    {
+        "id":2,
+        "nome":"Men’s denim jeans",
+        "preco":110.50,
+        "imagem":"assets/template/img/product/new-product/n3.jpg",
+        "categoria":{
+            "id":1,
+            "descricao":"Salgado"
+        }        
+    },{
+        "id":2,
+        "nome":"Men’s denim jeans",
+        "preco":110.50,
+        "imagem":"assets/template/img/product/new-product/n3.jpg",
+        "categoria":{
+            "id":1,
+            "descricao":"Salgado"
+        }        
+    }      
+]
