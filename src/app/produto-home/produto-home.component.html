@@ -12,7 +12,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>{{produto.nome}}</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">+ Add Carrinho</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -20,7 +20,7 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <h5>{{ produto.preco.toFixed(2) }}</h5>
+                                    <h5>R$ {{ produto.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</h5>
                                 </div>
                             </div>
                         </div>

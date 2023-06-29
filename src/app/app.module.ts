@@ -10,6 +10,7 @@ import { ProdutoHomeComponent } from './produto-home/produto-home.component';
 import { AboutComponent } from './about/about.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProdutoService } from './Service/produto.service';
+import { CarrinhoComprasService } from './Service/carrinho-compras.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ProdutoService } from './Service/produto.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ProdutoService],
+  providers: [ProdutoService,CarrinhoComprasService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
