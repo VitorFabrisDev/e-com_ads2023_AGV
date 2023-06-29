@@ -1,0 +1,171 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+
+    "e-commerce": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/Template/css/bootstrap.min.css",
+              "src/assets/Template/css/elegant-icons.css",
+              "src/assets/Template/css/font-awesome.min.css",
+              "src/assets/Template/css/magnific-popup.css",
+              "src/assets/Template/css/nice-select.css",
+              "src/assets/Template/css/owl.carousel.min.css",
+              "src/assets/Template/css/slicknav.min.css",
+              "src/assets/Template/css/style.css",
+              "src/assets/Template/sass/style.scss",
+              "src/assets/Template/sass/_variable.scss",
+              "src/assets/Template/sass/_mixins.scss",
+              "src/assets/Template/sass/_base.scss",
+              "src/assets/Template/sass/_header.scss",
+              "src/assets/Template/sass/_hero.scss",
+              "src/assets/Template/sass/_home-page.scss",
+              "src/assets/Template/sass/_product.scss",
+              "src/assets/Template/sass/_shop.scss",
+              "src/assets/Template/sass/_shop-details.scss",
+              "src/assets/Template/sass/_footer.scss",
+              "src/assets/Template/sass/_breadcrumb.scss",
+              "src/assets/Template/sass/_about.scss",
+              "src/assets/Template/sass/_shopping-cart.scss", 
+              "src/assets/Template/sass/_checkout.scss",
+              "src/assets/Template/sass/_blog.scss",
+              "src/assets/Template/sass/_blog-details.scss",
+              "src/assets/Template/sass/_blog-sidebar.scss",
+              "src/assets/Template/sass/_contact.scss",
+              "src/assets/Template/sass/_responsive.scss"
+            ],
+            "scripts": [
+              "src/assets/Template/js/jquery-3.3.1.min.js",
+              "src/assets/Template/js/bootstrap.min.js",
+              "src/assets/Template/js/jquery.nice-select.min.js",
+              "src/assets/Template/js/jquery.nicescroll.min.js",
+              "src/assets/Template/js/jquery.magnific-popup.min.js",
+              "src/assets/Template/js/jquery.countdown.min.js",
+              "src/assets/Template/js/jquery.slicknav.js",
+              "src/assets/Template/js/mixitup.min.js",
+              "src/assets/Template/js/owl.carousel.min.js",
+              "src/assets/Template/js/main.js"
+              "src/assets/template/freshshop-master/css/bootstrap.min.css",
+              "src/assets/template/freshshop-master/css/all.css",
+              "src/assets/template/freshshop-master/css/nice-select.css",
+              "src/assets/template/freshshop-master/css/animate.css",
+              "src/assets/template/freshshop-master/css/baguetteBox.min.css",
+              "src/assets/template/freshshop-master/css/bootsnav.css",
+              "src/assets/template/freshshop-master/css/carousel-ticker.css",
+              "src/assets/template/freshshop-master/css/bootstrap-select.css",
+              "src/assets/template/freshshop-master/css/code_animate.css",
+              "src/assets/template/freshshop-master/css/custom.css",
+              "src/assets/template/freshshop-master/css/jquery-ui.css",
+              "src/assets/template/freshshop-master/css/owl.carousel.min.css",
+              "src/assets/template/freshshop-master/css/responsive.css",
+              "src/assets/template/freshshop-master/css/style.css",
+              "src/assets/template/freshshop-master/css/superslides.css"
+            ],
+            "scripts": [
+              "src/assets/template/freshshop-master/js/baguetteBox.min.js",
+              "src/assets/template/freshshop-master/js/bootsnav.js",
+              "src/assets/template/freshshop-master/js/bootstrap.min.js",
+              "src/assets/template/freshshop-master/js/bootstrap-select.js",
+              "src/assets/template/freshshop-master/js/contact-form-script.js",
+              "src/assets/template/freshshop-master/js/custom.js",
+              "src/assets/template/freshshop-master/js/form-validator.min.js",
+              "src/assets/template/freshshop-master/js/images-loded.min.js",
+              "src/assets/template/freshshop-master/js/inewsticker.js",
+              "src/assets/template/freshshop-master/js/isotope.min.js",
+              "src/assets/template/freshshop-master/js/jquery.nicescroll.min.js",
+              "src/assets/template/freshshop-master/js/jquery.superslides.min.js",
+              "src/assets/template/freshshop-master/js/jquery-3.2.1.min.js",
+              "src/assets/template/freshshop-master/js/jquery-ui.js",
+              "src/assets/template/freshshop-master/js/owl.carousel.min.js",
+              "src/assets/template/freshshop-master/js/popper.min.js"
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "e-commerce:build:production"
+            },
+            "development": {
+              "browserTarget": "e-commerce:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "e-commerce:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

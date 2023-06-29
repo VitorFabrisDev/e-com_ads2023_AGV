@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+<<<<<<< HEAD
+  title = 'e-commerce_novo';
+=======
+  title = 'e-commerce';
+
+>>>>>>> d1fdfeeeaaf39ffaba91d84c4016f68c30949741
+}

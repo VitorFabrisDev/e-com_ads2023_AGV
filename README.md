@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ECommerceNovo
+=======
+# ECommerce
+>>>>>>> d1fdfeeeaaf39ffaba91d84c4016f68c30949741
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 

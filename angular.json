@@ -3,17 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "e-commerce_novo": {
+    "e-commerce": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
+      "root": "src",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/e-commerce_novo",
+            "outputPath": "dist/e-commerce",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -99,10 +99,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "e-commerce_novo:build:production"
+              "browserTarget": "e-commerce:build:production"
             },
             "development": {
-              "browserTarget": "e-commerce_novo:build:development"
+              "browserTarget": "e-commerce:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -110,7 +110,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "e-commerce_novo:build"
+            "browserTarget": "e-commerce:build"
           }
         },
         "test": {
