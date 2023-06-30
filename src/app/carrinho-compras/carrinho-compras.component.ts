@@ -9,9 +9,27 @@ import { CarrinhoComprasService } from '../Service/carrinho-compras.service';
   
 })
 export class CarrinhoComprasComponent {
-  carrinho: Carrinho[];
+ public carrinho: Carrinho[] = [];
+ subtotal: number = 0;
+ total: number = 0;
 
-  constructor(private carrinhoService: CarrinhoComprasService) {
+
+  constructor(public carrinhoService: CarrinhoComprasService) {
     this.carrinho = this.carrinhoService.getCarrinho();
+  }
+  atualizarQuantidade(item: Carrinho): void {
+    this.carrinhoService.alterarProdutoComQuantidade(item);
+  }
+  removerItem(produtoId: number): void {
+    this.carrinhoService.removerDoCarrinho(produtoId);
+  }
+  calcularSubtotal(): number {
+    this.subtotal = this.carrinho.reduce((total, item) => total + (item.valor * item.quantidade), 0);
+    return this.subtotal;
+  }
+
+  calcularTotal(): number {
+    this.total = this.carrinho.reduce((total, item) => total + (item.valor * item.quantidade), 0);
+    return this.total;
   }
 }

@@ -11,6 +11,9 @@ import { AboutComponent } from './about/about.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProdutoService } from './Service/produto.service';
 import { CarrinhoComprasService } from './Service/carrinho-compras.service';
+import { ClienteService } from './Service/cliente.service';
+import { FormsModule } from '@angular/forms';
+import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,14 @@ import { CarrinhoComprasService } from './Service/carrinho-compras.service';
     ProdutoHomeComponent,
     AboutComponent,
     LayoutComponent,
+    AutenticacaoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [ProdutoService,CarrinhoComprasService],
+  providers: [ProdutoService,CarrinhoComprasService,ClienteService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

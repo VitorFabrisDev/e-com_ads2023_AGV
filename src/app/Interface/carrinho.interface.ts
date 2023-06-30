@@ -1,8 +1,10 @@
+import { SafeResourceUrl } from "@angular/platform-browser";
+
 export interface Carrinho {
-    id: number;
-    produto: number;
-    descricao: string;
-    quantidade: number;
-    valor: number;
-    imagem: string;
-  }
+  produto: number;
+  descricao: string;
+  quantidade: number; // Alterado para number
+  valor: number;
+  imagem: string | SafeResourceUrl ;
+  id: number;
+}

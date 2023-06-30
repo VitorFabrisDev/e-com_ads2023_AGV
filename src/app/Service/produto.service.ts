@@ -23,7 +23,4 @@ export class ProdutoService {
       }
     });
   }
-  getProdutoById(produtoId: number) {
-    return this.produtos.find((produto: any) => produto.id === produtoId);
-  }
 }
