@@ -11,6 +11,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-7">
+                    <div class="header__top__left">
+                        <p>Entrega GRÁTIS para todo o Brasil.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5">
+                    <div class="header__top__right">
+                        <div class="header__top__links">
+                            <button type="button" class="header__top__links__button" (click)="openLoginModal()">LOGIN</button>
+                        </div>
+                        <div class="header__top__hover">
+                        </div>
+                    </div>
                 </div>
              </div>
         </div>
@@ -128,4 +140,25 @@
         </form>
     </div>
 </div>
-<!-- Search End -->
+
+<!-- Login Modal Begin -->
+<div id="login" class="login-modal" *ngIf="showLoginModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <form (ngSubmit)="login()">
+        <div>
+          <label for="username">CPF ou E-mail:</label>
+          <input type="text" id="username" name="username" [(ngModel)]="username" required>
+        </div>
+        <div>
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+        <div>
+            <a href="#" class="primary-btn" >Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Login Modal End -->

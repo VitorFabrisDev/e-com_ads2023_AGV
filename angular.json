@@ -25,7 +25,6 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
               "src/assets/Template/css/bootstrap.min.css",
               "src/assets/Template/css/elegant-icons.css",
               "src/assets/Template/css/font-awesome.min.css",
@@ -53,9 +52,11 @@
               "src/assets/Template/sass/_blog-details.scss",
               "src/assets/Template/sass/_blog-sidebar.scss",
               "src/assets/Template/sass/_contact.scss",
-              "src/assets/Template/sass/_responsive.scss"
+              "src/assets/Template/sass/_responsive.scss",
+              "src/styles.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "src/assets/Template/js/jquery-3.3.1.min.js",
               "src/assets/Template/js/bootstrap.min.js",
               "src/assets/Template/js/jquery.nice-select.min.js",
@@ -65,7 +66,8 @@
               "src/assets/Template/js/jquery.slicknav.js",
               "src/assets/Template/js/mixitup.min.js",
               "src/assets/Template/js/owl.carousel.min.js",
-              "src/assets/Template/js/main.js"
+              "src/assets/Template/js/main.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"
             ]
           },
           "configurations": {
