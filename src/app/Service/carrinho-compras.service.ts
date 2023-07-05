@@ -23,7 +23,7 @@ export class CarrinhoComprasService {
   }
 
   removerDoCarrinho(id: number): void {
-    const index = this.carrinho.findIndex(item => item.id === id);
+    const index = this.carrinho.findIndex(carrinho => carrinho.id === id);
     if (index !== -1) {
       this.carrinho.splice(index, 1);
       this.salvarCarrinhoNoLocalStorage();
@@ -61,7 +61,7 @@ export class CarrinhoComprasService {
     const imagem = `assets/Template/img/shopping-cart/cart-${id}.jpg`;
 
     return {
-      id,
+      id: this.obterUltimoIdCarrinho()+1,
       produto: id,
       descricao,
       quantidade,

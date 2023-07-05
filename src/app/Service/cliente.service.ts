@@ -15,7 +15,7 @@ export class ClienteService {
   }
 
   cadastrarCliente(cliente: Cliente): void {
-    const cpfExistente = this.clientes.find(c => c.cpf === cliente.cpf);
+    const cpfExistente = this.clientes.find(c => this.removerCaracteresEspeciais(c.cpf) === this.removerCaracteresEspeciais(cliente.cpf));
 
     if (cpfExistente) {
       cpfExistente.nome = cliente.nome;
@@ -38,4 +38,14 @@ export class ClienteService {
   private salvarClientesNoStorage(): void {
     localStorage.setItem(this.storageKey, JSON.stringify(this.clientes));
   }
+
+  buscarClientePorCpfOuEmail(cpfOuEmail: string): Cliente | undefined {
+    return this.clientes.find(c => c.cpf === this.removerCaracteresEspeciais(cpfOuEmail) || c.email === cpfOuEmail);
+  }
+
+  private removerCaracteresEspeciais(cpf: string): string {
+    // Remover caracteres especiais do CPF, como pontos e traços
+    return cpf.replace(/[^\d]+/g, '');
+  }
 }
+

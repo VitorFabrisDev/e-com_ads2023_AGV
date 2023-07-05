@@ -14,11 +14,18 @@
                     <div class="header__top__left">
                         <p>Entrega GRÁTIS para todo o Brasil.</p>
                     </div>
+                    <div *ngIf="isClienteLogado()" class="header__top__left">
+                        <p>Olá {{ nomeCliente }}, temos uma seleção de ofertas especiais para você!</p>
+                      </div>
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         <div class="header__top__links">
-                            <button type="button" class="header__top__links__button" (click)="openLoginModal()">LOGIN</button>
+                            <button *ngIf="!isClienteLogado(); else logoffButton" id="login" class="header__top__links__button" (click)="openLoginModal()">LOGIN</button>
+
+                            <ng-template #logoffButton>
+                              <button id="logoff" class="header__top__links__button"(click)="logoff()">LOGOFF</button>
+                            </ng-template>                   
                         </div>
                         <div class="header__top__hover">
                         </div>
@@ -156,7 +163,7 @@
           <input type="password" id="password" name="password" [(ngModel)]="password" required>
         </div>
         <div>
-            <a href="#" class="primary-btn" >Login</a>
+            <a [routerLink]="['/']" class="primary-btn" (click)="login()">Login</a>
         </div>
       </form>
     </div>

@@ -43,9 +43,7 @@ export class ProdutoDetalheComponent implements OnInit {
 
   adicionarAoCarrinho(quantidade: number) {
     const produtoId = this.route.snapshot.params['indice'];
-    console.log('Produto ID:', produtoId);
     const produtoDetalhes = this.produtoService.get(produtoId);
-    console.log('Produto ID:', produtoDetalhes);
   
     if (produtoDetalhes) {
       const produto: Carrinho = {
@@ -60,7 +58,7 @@ export class ProdutoDetalheComponent implements OnInit {
       const produtoExistente = this.carrinhoService.getProdutoPeloId(produto.produto);
   
       if (produtoExistente) {
-        produto.id = produtoExistente.id;
+        produto.produto = produtoExistente.id;
       } else {
         // Obtém o último id do carrinho e incrementa 1
         const ultimoId = this.carrinhoService.obterUltimoIdCarrinho();

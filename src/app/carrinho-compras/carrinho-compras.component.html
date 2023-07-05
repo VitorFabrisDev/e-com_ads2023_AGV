@@ -35,7 +35,7 @@
                                 </td>
                                 <td class="cart__price">R$ {{ (item.valor * item.quantidade).toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</td>
                                 <td class="cart__close">
-                                    <i class="fa fa-close" (click)="removerItem(item.produto)"></i>
+                                    <i class="fa fa-close" (click)="removerItem(item.id)"></i>
                                 </td>
                             </tr>
                         </tbody>
@@ -44,12 +44,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="#">Continuar Comprando</a>
+                            <a [routerLink]="['/']">Continuar Comprando</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="#"><i class="fa fa-spinner"></i> Atualizar Carrinho</a>
+                            <a href="#"><i class="fa fa-spinner"></i> Avançar / Comprar</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,6 @@
                         <li>Subtotal <span>R$ {{ calcularSubtotal().toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</span></li>
                         <li>Total <span>R$ {{ calcularTotal().toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Ir Para Autenticação</a>
                 </div>
             </div>
         </div>

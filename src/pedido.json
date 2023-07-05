@@ -1,0 +1,12 @@
+[{
+        "id": 1,
+        "cliente": id do cliente",
+		"produto": id do produto",
+		"valor": valor do pedido
+        "produtopedido": {
+            "produto": 1,
+            "quantidade": quantidade do carrinho
+			"valorunitario": valor do produto
+        }
+	}
+]

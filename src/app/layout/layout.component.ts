@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ClienteService } from '../Service/cliente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +9,21 @@ import { Component } from '@angular/core';
 })
 export class LayoutComponent {
   showLoginModal: boolean = false;
-  username: string = '';
-  password: string = '';
+    username: string = '';
+    password: string = '';
+    clienteLogado: boolean = false;
+    nomeCliente: string = '';
 
+    ngOnInit() {
+      const cliente = sessionStorage.getItem('cliente');
+      if (cliente) {
+        this.clienteLogado = true;
+        this.nomeCliente = JSON.parse(cliente).nome;
+      }
+    }
+
+  constructor(private clienteService: ClienteService, private router: Router) {}
+  
   openLoginModal() {
     this.showLoginModal = true;
   }
@@ -19,14 +33,26 @@ export class LayoutComponent {
   }
 
   login() {
-    // Lógica de autenticação
-    // ...
+    const cliente = this.clienteService.buscarClientePorCpfOuEmail(this.username);
 
-    // Resetar os campos de login
+    if (cliente && cliente.senha === this.password) {
+      console.log('Cliente autenticado com sucesso!');
+      sessionStorage.setItem('cliente', JSON.stringify(cliente));
+      console.log('ID do cliente armazenado:', cliente.id);
+      window.location.reload();
+    } else {
+      console.log('Credenciais inválidas!');
+    }
+
     this.username = '';
     this.password = '';
-
-    // Fechar a janela de login
     this.closeLoginModal();
+  }
+  isClienteLogado(): boolean {
+    return this.clienteLogado;
+  }
+  logoff() {
+    sessionStorage.removeItem('cliente');
+    this.clienteLogado = false;
   }
 }

@@ -20,8 +20,9 @@ export class CarrinhoComprasComponent {
   atualizarQuantidade(item: Carrinho): void {
     this.carrinhoService.alterarProdutoComQuantidade(item);
   }
-  removerItem(produtoId: number): void {
-    this.carrinhoService.removerDoCarrinho(produtoId);
+  removerItem(id: number): void {
+    this.carrinhoService.removerDoCarrinho(id);
+    console.log(id);
   }
   calcularSubtotal(): number {
     this.subtotal = this.carrinho.reduce((total, item) => total + (item.valor * item.quantidade), 0);
