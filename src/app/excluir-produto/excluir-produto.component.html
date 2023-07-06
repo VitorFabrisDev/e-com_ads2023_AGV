@@ -1,0 +1,22 @@
+<section class="product spad">
+    <h6 class="checkout__title">Excluir Produtos</h6>
+    <div class="container">
+        <div class="row product__filter">
+                <div *ngFor="let produto of produtos" class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                    <div class="product__item">
+                        <div class="product__item">
+                            <div class="product__item__pic" [ngStyle]="{'background-image': 'url('+ produto.imagem +')'}">
+                                <ul class="product__hover">
+                                    <li><a ><img #icone src="assets/Template/img/icon/remove.png" alt="" (click)="excluirProduto(produto.id)"></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6>{{produto.nome}}</h6>
+                                <h5>R$ {{ produto.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

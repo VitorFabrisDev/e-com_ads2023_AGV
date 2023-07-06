@@ -14,6 +14,8 @@ import { CarrinhoComprasService } from './Service/carrinho-compras.service';
 import { ClienteService } from './Service/cliente.service';
 import { FormsModule } from '@angular/forms';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
+import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
+import { ExcluirProdutoComponent } from './excluir-produto/excluir-produto.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
     AboutComponent,
     LayoutComponent,
     AutenticacaoComponent,
+    CadastroProdutoComponent,
+    ExcluirProdutoComponent,
   ],
   imports: [
     BrowserModule,

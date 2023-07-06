@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Carrinho } from '../Interface/carrinho.interface';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Produto } from '../Interface/produto.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -58,10 +59,10 @@ export class CarrinhoComprasService {
   }
  
   criarItem(id: number, descricao: string, quantidade: number, valor: number): Carrinho {
-    const imagem = `assets/Template/img/shopping-cart/cart-${id}.jpg`;
-
+    const imagem = this.getImagemProduto(id);
+  
     return {
-      id: this.obterUltimoIdCarrinho()+1,
+      id: this.obterUltimoIdCarrinho() + 1,
       produto: id,
       descricao,
       quantidade,
@@ -74,9 +75,16 @@ export class CarrinhoComprasService {
     this.carregarCarrinhoDoLocalStorage();
     return this.carrinho;
   }
-  getImagemProduto(idProduto: string): string {
-    const imagemUrl = `assets/Template/img/shopping-cart/cart-${idProduto}.jpg`;
-    return imagemUrl;
+  getImagemProduto(idProduto: number): string {
+    const produtosJSON = localStorage.getItem('produtos');
+    if (produtosJSON) {
+      const produtos: Produto[] = JSON.parse(produtosJSON);
+      const produto = produtos.find(p => p.id === idProduto);
+      if (produto && produto.imagem) {
+        return produto.imagem.replace('product', 'shopping-cart');
+      }
+    }
+    return '';
   }
   
   getProdutoPeloId(produtoId: number): Carrinho | undefined {

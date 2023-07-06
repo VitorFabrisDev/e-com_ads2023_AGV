@@ -34,7 +34,7 @@ export class ProdutoDetalheComponent implements OnInit {
         this.nome = produtoDetalhes.nome;
         this.preco = produtoDetalhes.preco;
         this.imagem = produtoDetalhes.imagem;
-        this.descricao = produtoDetalhes.categoria.descricao;
+        this.descricao = produtoDetalhes.descricao;
       } else {
         console.log('O produto detalhado não foi encontrado.');
       }
